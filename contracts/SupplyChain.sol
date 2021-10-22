@@ -3,12 +3,13 @@ pragma solidity >=0.5.16 <0.9.0;
 
 contract SupplyChain {
   // <owner>
-  address owner;
+  address public owner;
   
   constructor() public {
-      // 1. Set the owner to the transaction sender
-      owner = msg.sender;
-      // 2. Initialize the sku count to 0. Question, is this necessary?
+    // 1. Set the owner to the transaction sender
+    owner = msg.sender;
+    // 2. Initialize the sku count to 0. Question, is this necessary?
+    // Answer: No, already initialized at 0
   }
     // <skuCount>
     uint public skuCount;
@@ -31,7 +32,7 @@ contract SupplyChain {
         string name;
         uint sku;
         uint price;
-        SupplyChain.State state;
+        State state;
         address payable seller;
         address payable buyer;
       }
